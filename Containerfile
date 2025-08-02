@@ -18,6 +18,13 @@ FROM ghcr.io/ublue-os/aurora:stable
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
+# custom kargs taken from ubuntu live
+# via https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_image_mode_for_rhel_to_build_deploy_and_manage_operating_systems/managing-kernel-arguments-in-bootc-systems#how-to-inject-kernel-arguments-at-installation-time_managing-kernel-arguments-in-bootc-systems
+RUN cat <<EOF >> /usr/lib/bootc/kargs.d/x13s.toml
+kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "console=tty0", "crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M", "vt.handoff=7"]
+match-architectures = ["aarch64"]
+EOF
+
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
@@ -25,6 +32,8 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/build.sh && \
     ostree container commit
     
+
+
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
