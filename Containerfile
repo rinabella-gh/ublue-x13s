@@ -21,10 +21,6 @@ FROM quay.io/fedora/fedora-bootc:42-aarch64
 
 # custom kargs taken from ubuntu live
 # via https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_image_mode_for_rhel_to_build_deploy_and_manage_operating_systems/managing-kernel-arguments-in-bootc-systems#how-to-inject-kernel-arguments-at-installation-time_managing-kernel-arguments-in-bootc-systems
-RUN cat <<EOF >> /usr/lib/bootc/kargs.d/x13s.toml \
-kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "console=tty0", "crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M", "vt.handoff=7"] \
-match-architectures = ["aarch64"]
-EOF
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
