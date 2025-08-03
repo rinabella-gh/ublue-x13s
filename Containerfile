@@ -3,7 +3,8 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM --platform=linux/arm64 ghcr.io/ublue-os/aurora:stable
+#FROM ghcr.io/ublue-os/aurora:stable
+FROM quay.io/fedora/fedora-bootc:42-aarch64
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
