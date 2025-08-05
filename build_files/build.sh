@@ -14,7 +14,7 @@ echo 'kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "consol
 echo 'match-architectures = ["aarch64"]' >> /usr/lib/bootc/kargs.d/x13s.toml
 
 #adding install command
-dnf5 install /ctx/x13s-settings.rpm
+dnf5 -y install /ctx/x13s-settings.rpm
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
