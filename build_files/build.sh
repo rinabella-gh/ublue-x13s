@@ -13,6 +13,8 @@ set -ouex pipefail
 echo 'kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "console=tty0", "crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M", "vt.handoff=7"]' >> /usr/lib/bootc/kargs.d/x13s.toml 
 echo 'match-architectures = ["aarch64"]' >> /usr/lib/bootc/kargs.d/x13s.toml
 
+#adding install command
+dnf5 install ./x13s-settings.rpm
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
