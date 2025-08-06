@@ -18,6 +18,7 @@ echo 'match-architectures = ["aarch64"]' >> /usr/lib/bootc/kargs.d/x13s.toml
 # attempting to add default dtb
 export GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"
 echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/default/grub
+mkdir -p /boot/grub2
 echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' > /boot/grub2/user.cfg
 # Use a COPR Example:
 #
