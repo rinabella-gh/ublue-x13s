@@ -20,6 +20,7 @@ export GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"
 echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/default/grub
 mkdir -p /boot/grub2
 echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' > /boot/grub2/user.cfg
+echo 'GRUB_DISABLE_PROBER=true' >> /etc/default/grub
 grub2-mkconfig -o /boot/grub2/grub.cfg
 # Use a COPR Example:
 #
