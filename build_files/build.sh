@@ -16,9 +16,8 @@ echo 'match-architectures = ["aarch64"]' >> /usr/lib/bootc/kargs.d/x13s.toml
 #adding install command
 #dnf5 -y install /ctx/x13s-settings.rpm
 # attempting to add default dtb
-export GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"
-echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/default/grub
-echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' > /usr/lib/bootupd/grub2-static/configs.d/41_custom.cfg
+mkdir -p /boot/grub2
+echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /boot/grub2/user.cfg
 
 # Use a COPR Example:
 #
