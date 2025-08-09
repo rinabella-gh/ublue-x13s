@@ -25,3 +25,14 @@ disable = [
   "org.fedoraproject.Anaconda.Modules.Subscription",
   "org.fedoraproject.Anaconda.Modules.Timezone"
 ]
+
+[[customizations.files]]
+path = "/etc/default/grub"
+mode = "0644"
+user = "root"
+group = "root"
+data = """
+GRUB_DEFAULT_DTB = qcom/x13s.dtb
+GRUB_TIMEOUT = 1000
+"""
+

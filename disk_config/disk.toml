@@ -1,3 +1,14 @@
 [[customizations.filesystem]]
 mountpoint = "/"
 minsize = "20 GiB"
+
+[[customizations.files]]
+path = "/etc/default/grub"
+mode = "0644"
+user = "root"
+group = "root"
+data = """
+GRUB_DEFAULT_DTB = qcom/x13s.dtb
+GRUB_TIMEOUT = 1000
+"""
+
