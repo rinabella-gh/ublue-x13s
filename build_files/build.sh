@@ -17,11 +17,17 @@ echo 'match-architectures = ["aarch64"]' >> /usr/lib/bootc/kargs.d/x13s.toml
 #dnf5 -y install /ctx/x13s-settings.rpm
 # attempting to add default dtb
 mkdir -p /boot/grub2
-echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /boot/grub2/user.cfg # probably does not work due to anaconda shenanigans
+echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /boot/grub2/user.cfg # probably does not work due to anaconda shenanigans; i've put it in the pre but idk if that will even work
 
 # this is a hack, trying to use this for anaconda to actually add the DTB like it should to the boot iso. im a little doubtful this will work but i really don't want to have to reimpl bootc-image-builder
 echo 'set GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/grub.d/00_header
 echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/grub.d/00_header
+echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/default/grub
+
+# another attempt at a hack
+echo 'set GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/default/grub
+echo 'GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/default/grub
+echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /etc/default/grub
 
 # Use a COPR Example:
 #
