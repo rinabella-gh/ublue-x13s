@@ -15,9 +15,6 @@ cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo (might be able 
 dnf -y install /ctx/alsa-ucm-1.2.12-2.fc41.noarch.rpm
 dnf -y install x13s sway x13s firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio wireplumber flatpak git fuzzel tuigreet
 
-# remove noisy thing for now idfc
-rm /etc/profile.d/console-login-helper-messages-profile.sh
-
 # firmware
 # taken from https://www.rpmfind.net/linux/RPM/openmandriva/cooker/x86_64/main/release/adreno-firmware-20250720-1.noarch.html
 cp -n -r /ctx/usr /
@@ -35,6 +32,7 @@ echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /boot/grub
 #greetd
 cp /ctx/sway-run /usr/local/bin/ # doing it this way to enable pixman renderer
 cp /ctx/greetd.toml /etc/greetd/config.toml
+#todo: add greetd user to shadow
 
 #sway
 cp /ctx/99*.conf /etc/sway/config.d/
