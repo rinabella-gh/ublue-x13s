@@ -12,11 +12,9 @@ set -ouex pipefail
 cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo (might be able to use copr but will need to retry)
 # KDE
 # work around for rootfiles package
-mv /root /root.old
+dnf -y group install kde-desktop
 dnf -y install /ctx/alsa-ucm-1.2.12-2.fc41.noarch.rpm
-dnf -y group install kde-desktop-environment
-# mv /root.old/.* /root - there are no files here
-#mv /root.old/* /root - also no files here
+
 # need a specific version of alsa-ucm not included in f42 yet, eventually should be able to update it but for now just including it
 dnf -y install x13s sway x13s firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio wireplumber flatpak git fuzzel tuigreet
 # firmware
