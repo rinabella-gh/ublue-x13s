@@ -9,8 +9,8 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf copr enable jlinton/x13s
-dnf install x13s sway x13s alsa-ucm alsa-ucm-utils firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers neovim NetworkManager-wifi pavucontrol pipiewire-pulseaudio pipewire-alsa wireplumber flatpak git fuzzel mesa-demos git
+cp jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo
+dnf install x13s sway x13s alsa-ucm alsa-ucm-utils firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipiewire-pulseaudio pipewire-alsa wireplumber flatpak git fuzzel
 
 #firmware
 cp -r sc8280xp /lib/firmware/qcom
