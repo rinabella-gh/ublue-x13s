@@ -14,7 +14,7 @@ cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo (might be able 
 # need a specific version of alsa-ucm not included in f42 yet, eventually should be able to update it but for now just including it
 dnf -y install /ctx/alsa-ucm-1.2.12-2.fc41.noarch.rpm
 dnf -y install x13s sway x13s firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio wireplumber flatpak git fuzzel tuigreet
-
+dnf -y group install kde-desktop-environment
 # firmware
 # taken from https://www.rpmfind.net/linux/RPM/openmandriva/cooker/x86_64/main/release/adreno-firmware-20250720-1.noarch.html
 cp -n -r /ctx/usr /
