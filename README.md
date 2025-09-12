@@ -27,6 +27,8 @@ However even if you do get slbounce to work and boot you into EL2, the battery a
 
 The main issue I am aware of is that the video camera is untested and presumed to not work. Sleep is totally untested, might be broken or not performing very well. Additionally, bluetooth is untested, but should most likely work.
 
+I have not tested the 5G modem.
+
 There are a few shortcuts that were made due to feasibility. Namely to do with building the installer ISO; there isn't a great way to just insert the dtb to the image, so there is a bunch of hacking around that.
 
 ## References
