@@ -17,11 +17,17 @@ The base image has the following features once installed:
   - Even as a software renderer, the performance from `pixman` is very solid. WebGL Aquarium gets a steady 30 FPS.  
 - Sound, Wifi, Temperature, and Battery sensors should be working and displayed per the default `sway-fedora-config`
 - - Firefox
-- Support for flatpaks is added but nothing beyond that; I recommend installing eithr Bazaar or Warehouse to install further flatpaks.
-- 
+- Support for flatpaks is added but nothing beyond that; I recommend installing either Bazaar or Warehouse to install further flatpaks.
+
+#### slbounce/EL2/KVM
+
+Not in the image at this time; fedora seems to be packaging EL2 but seems to not be working as expected with `slbounce`. `slbounce` can be added however via refind and then compiling your own el2 overlayed dtb. needs fdtoverlay which is provided by i believe dts. there might be an slbounce mod for grub i'm unaware of that would make it a bit more tenable.
+
+However even if you do get slbounce to work and boot you into EL2, the battery and sound break again. So use at your own knowledge.
+
 ## Issues
 
-The two main issues I am aware of at this time are the lack of graphics acceleration and the video camera is untested and presumed to not work. Additionally, bluetooth is untested, but should most likely work.
+The two main issues I am aware of at this time are the lack of graphics acceleration and the video camera is untested and presumed to not work. Sleep is totally untested. Additionally, bluetooth is untested, but should most likely work.
 
 There are a few shortcuts that were made due to feasibility. Namely to do with building the installer ISO; there isn't a great way to just insert the dtb to the image. So we try our best.
 
