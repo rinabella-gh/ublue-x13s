@@ -13,10 +13,8 @@ The most frustrating part of this was trying to understand what a .dtb is and wh
 The base image has the following features once installed:
 
 - `tuigreeter` for logging in
-- `sway` running with the `WLR_RENDERER` set to `pixman` for software rendering with some very slight customization.
-  - Even as a software renderer, the performance from `pixman` is very solid. WebGL Aquarium gets a steady 30 FPS.  
 - Sound, Wifi, Temperature, and Battery sensors should be working and displayed per the default `sway-fedora-config`
-- - Firefox
+- Firefox installed by default
 - Support for flatpaks is added but nothing beyond that; I recommend installing either Bazaar or Warehouse to install further flatpaks.
 
 #### slbounce/EL2/KVM
@@ -27,9 +25,9 @@ However even if you do get slbounce to work and boot you into EL2, the battery a
 
 ## Issues
 
-The two main issues I am aware of at this time are the lack of graphics acceleration and the video camera is untested and presumed to not work. Sleep is totally untested. Additionally, bluetooth is untested, but should most likely work.
+The main issue I am aware of is that the video camera is untested and presumed to not work. Sleep is totally untested, might be broken or not performing very well. Additionally, bluetooth is untested, but should most likely work.
 
-There are a few shortcuts that were made due to feasibility. Namely to do with building the installer ISO; there isn't a great way to just insert the dtb to the image. So we try our best.
+There are a few shortcuts that were made due to feasibility. Namely to do with building the installer ISO; there isn't a great way to just insert the dtb to the image, so there is a bunch of hacking around that.
 
 ## References
 
