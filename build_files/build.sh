@@ -12,8 +12,9 @@ set -ouex pipefail
 cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo
 dnf -y install x13s sway x13s alsa-ucm alsa-ucm-utils firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio wireplumber flatpak git fuzzel
 
-#firmware
-cp -r /ctx/sc8280xp /lib/firmware/qcom
+# firmware
+# taken from https://vault.almalinux.org/9.6/BaseOS/Source/Packages/linux-firmware-20250604-151.2.el9_6.src.rpm
+cp -r /ctx/qcom /lib/firmware/
 
 # adding kargs from ubuntu 25.10 daily as of aug 2 2025
 echo 'kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "console=tty0", "crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M", "vt.handoff=7"]' >> /usr/lib/bootc/kargs.d/x13s.toml 
