@@ -9,11 +9,11 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-cp jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo
+cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo
 dnf install x13s sway x13s alsa-ucm alsa-ucm-utils firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipiewire-pulseaudio pipewire-alsa wireplumber flatpak git fuzzel
 
 #firmware
-cp -r sc8280xp /lib/firmware/qcom
+cp -r /ctx/sc8280xp /lib/firmware/qcom
 
 # adding kargs from ubuntu 25.10 daily as of aug 2 2025
 echo 'kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "console=tty0", "crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M", "vt.handoff=7"]' >> /usr/lib/bootc/kargs.d/x13s.toml 
