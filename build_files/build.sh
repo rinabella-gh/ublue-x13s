@@ -14,7 +14,7 @@ dnf -y install x13s sway x13s firefox labwc sway-config-fedora wireplumber mesa-
 
 # firmware
 # taken from https://www.rpmfind.net/linux/RPM/openmandriva/cooker/x86_64/main/release/adreno-firmware-20250720-1.noarch.html
-cp -n /ctx/usr /
+cp -n -r /ctx/usr /
 
 # adding kargs from ubuntu 25.10 daily as of aug 2 2025
 echo 'kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "console=tty0", "crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M", "vt.handoff=7"]' >> /usr/lib/bootc/kargs.d/x13s.toml 
