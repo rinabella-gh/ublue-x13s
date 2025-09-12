@@ -10,11 +10,11 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo
-dnf -y install x13s sway x13s alsa-ucm alsa-ucm-utils firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio wireplumber flatpak git fuzzel
+dnf -y install x13s sway x13s firefox labwc sway-config-fedora wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio wireplumber flatpak git fuzzel
 
 # firmware
-# taken from https://vault.almalinux.org/9.6/BaseOS/Source/Packages/linux-firmware-20250604-151.2.el9_6.src.rpm
-cp -r /ctx/qcom /lib/firmware/
+# taken from https://www.rpmfind.net/linux/RPM/openmandriva/cooker/x86_64/main/release/adreno-firmware-20250720-1.noarch.html
+dnf -y install /ctx/adreno-firmare-20250720-1-omv2590.noarch.rpm
 
 # adding kargs from ubuntu 25.10 daily as of aug 2 2025
 echo 'kargs = ["clk_ignore_unused", "pd_ignore_unused", "arm64.nopauth", "console=tty0", "crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M", "vt.handoff=7"]' >> /usr/lib/bootc/kargs.d/x13s.toml 
