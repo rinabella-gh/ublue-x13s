@@ -10,12 +10,7 @@ The most frustrating part of this was trying to understand what a .dtb is and wh
 
 ### Image features
 
-The base image has the following features once installed:
-
-- `tuigreeter` for logging in
-- Sound, Wifi, Temperature, and Battery sensors should be working and displayed per the default `sway-fedora-config`
-- Firefox installed by default
-- Support for flatpaks is added but nothing beyond that; I recommend installing either Bazaar or Warehouse to install further flatpaks.
+The base image is a very minimally modified KDE environment.
 
 #### slbounce/EL2/KVM
 
