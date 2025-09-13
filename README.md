@@ -4,13 +4,13 @@
 
 This an image for the x13s that aims to provide a sensible base for the hardware, allowing users to pin certain releases to ensure there is always a stable version available for the user on their computer.
 
-Based off universal-blue's template, specifically bootc. I pretty much made this because I was tired of the ubuntu installation having severe performance regressions.
+Based off universal-blue's template, specifically bootc. I pretty much made this because I was tired of the ubuntu installation having severe performance regressions and wanted to be able to pin a known good release then roll back to it if needed.
 
 The most frustrating part of this was trying to understand what a .dtb is and where I should be putting the .dtb to ensure it was in line with how the sytems were expecting the changes.
 
 ### Image features
 
-The base image is a very minimally modified KDE environment.
+The base image is a very minimally modified KDE environment. It used to be a lot more involved, but, video hardware and sound were implemented while I was working on this! Hooray. lol.
 
 #### slbounce/EL2/KVM
 
@@ -20,7 +20,7 @@ However even if you do get slbounce to work and boot you into EL2, the battery a
 
 ## Issues
 
-The main issue I am aware of is that the video camera is untested and presumed to not work. Sleep is totally untested, might be broken or not performing very well. Additionally, bluetooth is untested, but should most likely work.
+The main issue I am aware of is that the video camera is untested and presumed to not work. Sleep seems to at least somewhat work, I'm not sure how well. Additionally, bluetooth is untested, but should most likely work.
 
 I have not tested the 5G modem.
 
