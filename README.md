@@ -18,7 +18,9 @@ The image originally didn't have acceleration and needed to work around a few th
 
 Not in the image at this time; fedora seems to be packaging EL2 but seems to not be working as expected with `slbounce`. `slbounce` can be added however via refind and then compiling your own el2 overlayed dtb. needs fdtoverlay which is provided by i believe dts. there might be an slbounce mod for grub i'm unaware of that would make it a bit more tenable.
 
-However even if you do get slbounce to work and boot you into EL2, the battery and sound break again. So use at your own knowledge.
+However even if you do get slbounce to work and boot you into EL2, the battery and sound will probably not work. So use at your own knowledge.
+
+You can find documentations on the slbounce setup process here: https://github.com/rinabella-gh/ublue-x13s/wiki/x13s-slbounce
 
 ## Issues
 
