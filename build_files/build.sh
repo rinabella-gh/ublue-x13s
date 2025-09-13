@@ -13,7 +13,8 @@ cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo (might be able 
 
 # KDE
 mv /root /root.old # workaround for root-files being pulled in, could just use @kde-desktop
-dnf -y group install kde-desktop-environment --exclude kde-discover-packagekit #packagekit does not mesh with bootc
+dnf -y group install kde-desktop-environment #packagekit does not mesh with bootc
+dnf -y uninstall kde-discover-packagekit
 # need a specific version of alsa-ucm not included in f42 yet, eventually should be able to update it but for now just including it
 dnf -y install x13s firefox wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio flatpak git
 # firmware
