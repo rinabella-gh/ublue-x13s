@@ -12,7 +12,7 @@ set -ouex pipefail
 cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo (might be able to use copr but will need to retry)
 
 # KDE
-rmdir /root # workaround for root-files being pulled in
+mv /root /root.old # workaround for root-files being pulled in
 dnf -y group install kde-desktop-environment #@kde-desktop is more minimal
 
 # need a specific version of alsa-ucm not included in f42 yet, eventually should be able to update it but for now just including it
