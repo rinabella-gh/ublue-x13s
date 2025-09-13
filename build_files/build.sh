@@ -17,7 +17,7 @@ mv /root /root.old # workaround for root-files being pulled in, could just use @
 dnf -y group install kde-desktop-environment --exclude plasma-discover-packagekit #packagekit does not mesh with bootc
 
 # disable PackageKit.sh
-mv /ctx/profile.d/PackageKit.sh /etc/profile.d/PackageKit.sh
+cp /ctx/profile.d/PackageKit.sh /etc/profile.d/PackageKit.sh
 
 dnf -y install x13s firefox wireplumber mesa-vulkan-drivers mesa-dri-drivers vim NetworkManager-wifi pavucontrol pipewire-pulseaudio flatpak git
 
