@@ -12,6 +12,8 @@ The most frustrating part of this was trying to understand what a .dtb is and wh
 
 The base image is a very minimally modified KDE environment. It used to be a lot more involved, but, video hardware and sound were implemented while I was working on this! Hooray. lol.
 
+The image originally didn't have acceleration and needed to work around a few things to use the software renderer. That image is in the `fallback` branch; good for reference for software only installations.
+
 #### slbounce/EL2/KVM
 
 Not in the image at this time; fedora seems to be packaging EL2 but seems to not be working as expected with `slbounce`. `slbounce` can be added however via refind and then compiling your own el2 overlayed dtb. needs fdtoverlay which is provided by i believe dts. there might be an slbounce mod for grub i'm unaware of that would make it a bit more tenable.
