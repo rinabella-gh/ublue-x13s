@@ -12,10 +12,15 @@ set -ouex pipefail
 cp /ctx/jlinton-x13s.repo /etc/yum.repos.d/ # add communtiy repo (might be able to use copr but will need to retry)
 
 # KDE
-mv /root /root.old # workaround for root-files being pulled in, could just use @kde-desktop
+mv /root /root.old # workaround for root-files being pulled in, could just use @kde-desktop but w/e
+
 dnf -y group install kde-desktop-environment --exclude plasma-discover-packagekit #packagekit does not mesh with bootc
-# need a specific version of alsa-ucm not included in f42 yet, eventually should be able to update it but for now just including it
-dnf -y install x13s firefox wireplumber mesa-vulkan-drivers mesa-dri-drivers neovim NetworkManager-wifi pavucontrol pipewire-pulseaudio flatpak git
+
+# disable PackageKit.sh
+mv profile.d/PackageKit.sh /etc/profile.d/PackageKit.sh
+
+dnf -y install x13s firefox wireplumber mesa-vulkan-drivers mesa-dri-drivers vim NetworkManager-wifi pavucontrol pipewire-pulseaudio flatpak git
+
 # firmware
 # taken from https://www.rpmfind.net/linux/RPM/openmandriva/cooker/x86_64/main/release/adreno-firmware-20250720-1.noarch.html
 cp -n -r /ctx/usr /
