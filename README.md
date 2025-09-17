@@ -28,6 +28,8 @@ Sleep seems to at least somewhat work, I'm not sure how well. I have not tested 
 
 There are a few shortcuts that were made due to feasibility. Namely to do with building the installer ISO; there isn't a great way to just insert the dtb to the image, so there is a bunch of hacking around that. (note, installer ISO has not been released yet due to issues)
 
+I am running some intensive workloads on it, and occasionally the UI crashes. Not quite sure what's happening.
+
 ## References
 
 Helpful resources for the X13s:
