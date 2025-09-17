@@ -16,19 +16,17 @@ The image originally didn't have acceleration and needed to work around a few th
 
 #### slbounce/EL2/KVM
 
-Not in the image at this time; fedora seems to be packaging EL2 but seems to not be working as expected with `slbounce`. `slbounce` can be added however via refind and then compiling your own el2 overlayed dtb. needs fdtoverlay which is provided by i believe dts. there might be an slbounce mod for grub i'm unaware of that would make it a bit more tenable.
+Not in the image at this time; fedora seems to be packaging EL2 but seems to not be working as expected with `slbounce`. `slbounce` can be added however via `refind` and then compiling your own el2 overlayed dtb. needs `fdtoverlay` which is provided by i believe `dts`. there might be an slbounce mod for grub i'm unaware of that would make it a bit more tenable.
 
 However even if you do get slbounce to work and boot you into EL2, the battery and sound will probably not work. So use at your own knowledge.
 
-You can find documentations on the slbounce setup process here: https://github.com/rinabella-gh/ublue-x13s/wiki/x13s-slbounce
+You can find documentation on the slbounce setup process here: https://github.com/rinabella-gh/ublue-x13s/wiki/x13s-slbounce
 
 ## Issues
 
-The main issue I am aware of is that the video camera is untested and presumed to not work. Sleep seems to at least somewhat work, I'm not sure how well. Additionally, bluetooth is untested, but should most likely work.
+Sleep seems to at least somewhat work, I'm not sure how well. I have not tested the 5G modem, but it is detected by linux.
 
-I have not tested the 5G modem.
-
-There are a few shortcuts that were made due to feasibility. Namely to do with building the installer ISO; there isn't a great way to just insert the dtb to the image, so there is a bunch of hacking around that.
+There are a few shortcuts that were made due to feasibility. Namely to do with building the installer ISO; there isn't a great way to just insert the dtb to the image, so there is a bunch of hacking around that. (note, installer ISO has not been released yet due to issues)
 
 ## References
 
