@@ -19,7 +19,6 @@ FROM quay.io/fedora/fedora-bootc:42-aarch64
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 # https://github.com/coreos/layering-examples/blob/c068b6524c8eca38eca465315758c853fdb20335/replace-kernel/Containerfile#L4
-RUN rpm-ostree cliwrap install-to-root /
 
 # custom kargs taken from ubuntu live
 # via https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_image_mode_for_rhel_to_build_deploy_and_manage_operating_systems/managing-kernel-arguments-in-bootc-systems#how-to-inject-kernel-arguments-at-installation-time_managing-kernel-arguments-in-bootc-systems
