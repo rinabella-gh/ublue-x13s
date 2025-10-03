@@ -5,10 +5,9 @@ contents = """
 
 mkdir -p /boot/grub2
 echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /boot/grub2/user.cfg
-echo 'set GRUB_DEFAULT_DTB="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /boot/grub2/user.cfg
 %end
 %post
-bootc switch --mutate-in-place --transport registry ghcr.io/rinabella-gh/ublue-x13s:latest
+bootc switch --mutate-in-place --transport registry ghcr.io/rinabella-gh/bootc-x13s:latest
 bootupctl update
 %end
 """
