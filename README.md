@@ -1,4 +1,4 @@
-# ublue-x13s
+# bootc-x13s
 
 ## About
 
