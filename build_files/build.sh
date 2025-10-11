@@ -33,6 +33,11 @@ echo 'match-architectures = ["aarch64"]' >> /usr/lib/bootc/kargs.d/x13s.toml
 mkdir -p /boot/grub2
 echo 'set devicetree="dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"' >> /boot/grub2/user.cfg # probably does not work due to anaconda shenanigans; i've put it in the pre but idk if that will even work
 
+echo x13s >> /etc/hostname
+
+# user needs to update themselves
+systemctl disable bootc-fetch-apply-updates.timer
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
